@@ -1,0 +1,32 @@
+server:
+  port: 7076
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: config-server
+  kafka:
+    bootstrap-servers: localhost:9092   #配置 kafka 服务器的地址和端口
+    consumer:
+      group-id: SpringCloud-bus
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/bluedestiny/maven_project01
+          searchPaths:  'application'
+          username: 478965119@qq.com
+          password: 478965119jinan
+      label:  master
+#是否需要权限拉去，默认是true,如果不false就不允许你去拉取配置中心Server更新的内容
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 这里配置自动刷新后，访问路径是： post http://localhost:7076/actuator/bus-refresh
+

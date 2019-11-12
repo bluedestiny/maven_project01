@@ -24,15 +24,18 @@ public class ServiceRibbonApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceRibbonApplication.class, args);
     }
+
     @Bean
     @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
     @Autowired
     private HelloService helloService;
+
     @RequestMapping("/hi")
-    public String hi(@RequestParam String name){
+    public String hi(@RequestParam String name) {
         return helloService.hi(name);
     }
 }

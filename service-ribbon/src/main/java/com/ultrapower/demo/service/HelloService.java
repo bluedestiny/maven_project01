@@ -9,13 +9,14 @@ import org.springframework.web.client.RestTemplate;
 public class HelloService {
     @Autowired
     private RestTemplate restTemplate;
+
     @HystrixCommand(fallbackMethod = "handleError")
-    public String hi(String name){
-        return restTemplate.getForObject("http://SERVICE-HI/hi?name="+name,String.class);
+    public String hi(String name) {
+        return restTemplate.getForObject("http://SERVICE-HI/hi?name=" + name, String.class);
 
     }
 
-    public String handleError(String name){
-        return "hello ,name:"+ name + "this is a error!!!";
+    public String handleError(String name) {
+        return "hello ,name:" + name + "this is a error!!!";
     }
 }

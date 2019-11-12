@@ -10,6 +10,6 @@ eureka:
       defaultZone:  http://${eureka.instance.hostname}:${server.port}/eureka/
 
 spring:
-    application:
-      name: eureka-server
+  application:
+    name: eureka-server
 
