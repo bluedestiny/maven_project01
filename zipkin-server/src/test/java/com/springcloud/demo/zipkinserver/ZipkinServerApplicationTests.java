@@ -1,13 +1,13 @@
-package com.ultrapower.demo.eurekaclient;
+package com.springcloud.demo.zipkinserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaClientApplicationTests {
+class ZipkinServerApplicationTests {
 
     @Test
-    public void contextLoads() {
+    void contextLoads() {
     }
 
 }

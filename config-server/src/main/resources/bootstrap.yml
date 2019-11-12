@@ -22,6 +22,8 @@ spring:
           username: 478965119@qq.com
           password: 478965119jinan
       label:  master
+  profiles:
+    active:   native
 #是否需要权限拉去，默认是true,如果不false就不允许你去拉取配置中心Server更新的内容
 management:
   endpoints:
@@ -29,4 +31,5 @@ management:
       exposure:
         include: "*"
 # 这里配置自动刷新后，访问路径是： post http://localhost:7076/actuator/bus-refresh
-
+encrypt:
+  key:  foorbar

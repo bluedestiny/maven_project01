@@ -4,8 +4,11 @@ spring:
   cloud:
     config:
       label:  master
-      profile:  dev
+      # profile是配置中心配置文件的-后边的那个类型名字
+      profile:  test
       uri:  http://localhost:7076/
+      # name是配置中心的配置文件的名字
+      name: database,component,business
 server:
   port: 7077
 

@@ -16,14 +16,14 @@ public class ConfigClientApplication {
         SpringApplication.run(ConfigClientApplication.class, args);
     }
 
-    @Value("${name}")
-    String name;
-    @Value("${age}")
-    private Integer age;
+    @Value("${datasource.url}")
+    String url;
+    @Value("${datasource.username}")
+    private String username;
 
     @RequestMapping(value = "/hi")
     public String hi() {
-        return name + age;
+        return url + ":" + username;
     }
 
 }
