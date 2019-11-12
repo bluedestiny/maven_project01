@@ -30,3 +30,4 @@ custom:
   passwd: guest-new
 
 profile: test-new
+name: file
